@@ -120,12 +120,35 @@
 /* Styles for desktop devices (e.g., PCs) */
 @media screen and (min-width: 769px) {
     hr {
-        background-color: #999; /* Change the background color for desktop */
+        background-color: #adadad; /* Change the background color for desktop */
         height: 1px; /* Adjust the height for desktop */
         margin: 20px 0; /* Adjust the margin for desktop */
     } }
+    /* Style for the back arrow button */
+.back-arrow-button {
+    width: 40px;
+    height: 40px;
+    background: url('back-arrow.png') no-repeat center center;
+    background-size: 60% 60%;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+}
+
     </style>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        // Get the back button element by its ID
+        var backButton = document.getElementById('backButton');
+    
+        // Add a click event listener to the back button
+        backButton.addEventListener('click', function() {
+            // Use the browser's history to navigate back to the previous page
+            window.history.back();
+        });
+    });
+    </script>
 </head>
+
 <body>
     <img class="logo" src="logo.png" alt="Your Logo" width="100">
 <div class="navbar">
@@ -135,7 +158,9 @@
     <a href="#">Portfolio</a>
     <a href="#">Contact</a>
 </div>
+<button id="backButton" class="back-arrow-button"></button>
 
+<script src="script.js"></script>
 <div class="photo-grid">
     <div class="photo">
        <a href="testing.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
@@ -186,7 +211,7 @@
 
 
 
-    
+
     
 
 
