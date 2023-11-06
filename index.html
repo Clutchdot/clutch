@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        /* Style for the navigation bar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .logo-and-login {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .login-button a {
+            color: #000;
+            text-decoration: none;
+        }
+
         .navbar {
             overflow: hidden;
             background-color: #333;
         }
 
-        /* Navigation bar links */
         .navbar a {
             float: left;
             display: block;
@@ -18,7 +41,6 @@
             text-decoration: none;
         }
 
-        /* Add a media query for screens with a maximum width of 600px */
         @media (max-width: 600px) {
             .navbar a {
                 float: none;
@@ -27,50 +49,46 @@
             }
         }
 
-        /* Style for the photo grid container */
         .photo-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
         }
 
-        /* Style for individual photos */
         .photo {
-            width: calc(33.33% - 20px); /* Adjust based on desired number of columns and gap */
+            width: calc(33.33% - 20px);
             margin: 10px;
             text-align: center;
         }
 
-        /* Add a media query for screens with a minimum width of 1024px */
         @media (min-width: 1024px) {
             .photo {
-                width: calc(25% - 20px); /* Adjust for larger screens and desired columns */
+                width: calc(25% - 20px);
             }
         }
 
-        /* Apply a media query for screens with a maximum width of 768px for the photo grid */
-        @media (max-width: 420px) {
+        @media (max-width: 768px) {
             .photo {
-                width: calc(50% - 20px); /* Adjust for smaller screens and fewer columns */
+                width: calc(50% - 20px);
             }
         }
+
         .button {
             padding: auto;
             border-radius: 2;
             color: black;
             font-family: sans-serif;
         }
+
         .load-more-container {
             text-align: center;
-            margin-top: 20px; /* Adjust the margin as needed */
+            margin-top: 20px;
         }
 
-        /* Style for the hidden checkbox input */
         .load-more-input {
             display: none;
         }
 
-        /* Style for the "Load More" button label */
         .load-more-label {
             display: inline-block;
             padding: 10px 20px;
@@ -80,148 +98,68 @@
             cursor: pointer;
         }
 
-        /* Style for the hidden checkbox input when checked */
         .load-more-input:checked + .photo-grid .photo.hidden {
             display: block;
         }
 
-        /* Style for the "Load More" button label when the checkbox is checked */
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
-            display: none;}
-            .logo {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .logo-and-login {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 10px;
-        }
-
-        /* Style for the login button link */
-        .login-button a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
+            display: none;
         }
     </style>
 </head>
 <body>
-
     <div class="logo-and-login">
-        <img class="logo" src="logo.png" alt="Your Logo" width="100">
+        <img class="logo" src="logo.png" alt="Your Logo">
         <div class="login-button">
             <a href="loginorsignup.html">Login</a>
         </div>
     </div>
-<div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Portfolio</a>
-    <a href="#">Contact</a>
-</div>
-
-<div class="photo-grid">
-    <div class="photo">
-       <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
-        <p>Photo 1 Description</p>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
     </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
+    <div class="photo-grid">
+        <div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div><div class="photo">
+            <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+             <p>Photo 1 Description</p>
+         </div>
     </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
+    <div class="load-more-container">
+        <input type="checkbox" id="load-more" class="load-more-input">
+        <label for="load-more" class="load-more-label">Load More</label>
     </div>
-    <div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div><div class="photo">
-        <img src="white.jpg" alt="Photo 1" width="320">
-        <p>Photo 1 Description</p>
-    </div>
-    <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
-        <p>Photo 2 Description</p>
-    </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
-        <p>Photo 3 Description</p>
-    </div>
-    
-    <!-- Add more photos as needed -->
-</div>
-<div class="load-more-container">
-    <input type="checkbox" id="load-more" class="load-more-input">
-    <label for="load-more" class="load-more-label">Load More</label>
-</div>
 </body>
 </html>
