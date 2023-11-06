@@ -29,6 +29,14 @@ form textarea {
     border-radius: 5px;
 }
 
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 form button {
     background-color: #007BFF;
     color: #fff;
@@ -42,7 +50,6 @@ form button {
 form button:hover {
     background-color: #0056b3;
 }
-
    </style>
    <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -55,6 +62,8 @@ form button:hover {
         var name = document.getElementById('name').value;
         var address = document.getElementById('address').value;
         var phone = document.getElementById('phone').value;
+        var serialNumber = document.getElementById('serialNumber').value;
+        var shirtSize = document.getElementById('shirtSize').value;
 
         // Send data to the server using AJAX
         var xhr = new XMLHttpRequest();
@@ -69,12 +78,10 @@ form button:hover {
             }
         };
 
-        xhr.send(JSON.stringify({ name, address, phone }));
+        xhr.send(JSON.stringify({ name, address, phone, serialNumber, shirtSize }));
     });
 });
-
    </script>
-  
 </head> 
 <body>
     <div class="container">
@@ -88,6 +95,18 @@ form button:hover {
             
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
+
+            <label for="serialNumber">Serial Number of Shirt:</label>
+            <input type="text" id="serialNumber" name="serialNumber" required>
+            
+            <label for="shirtSize">Shirt Size:</label>
+            <select id="shirtSize" name="shirtSize" required>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
 
             <button type="submit">Submit</button>
         </form>
