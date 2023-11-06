@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .warning {
+            color: red;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required placeholder="Enter your mobile number (10 digits)">
+            <span id="mobileWarning" class="warning"></span>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            var mobileInput = document.getElementById("mobile");
+            var mobileValue = mobileInput.value;
+            var mobileWarning = document.getElementById("mobileWarning");
+            
+            if (!/^\d{10}$/.test(mobileValue)) {
+                mobileWarning.textContent = "Please enter a valid 10-digit mobile number.";
+                e.preventDefault(); // Prevent form submission
+            } else {
+                mobileWarning.textContent = ""; // Clear the warning
+
+                // Store user details in localStorage
+                var userDetails = {
+                    mobile: mobileValue,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                };
+                localStorage.setItem("userDetails", JSON.stringify(userDetails));
+
+                // Redirect to the index page
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
