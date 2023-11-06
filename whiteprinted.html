@@ -4,25 +4,51 @@
 <html>
 <head>
     <style>
-          /* Styles for laptops or standard screens */
-@media screen and (min-width: 1024px) {
-    /* Your laptop styles here */
-}
-/* Styles for tablets in portrait orientation */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Your tablet styles here */
-}
-/* Styles for mobile devices in portrait orientation */
-@media screen and (max-width: 767px) {
-    /* Your mobile styles here */
-}
-        /* Style for the navigation bar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('logo.png') repeat;
+            animation: backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .logo-and-login {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .login-button a {
+            color: #000;
+            text-decoration: none;
+        }
+
         .navbar {
             overflow: hidden;
             background-color: #333;
         }
 
-        /* Navigation bar links */
         .navbar a {
             float: left;
             display: block;
@@ -32,7 +58,6 @@
             text-decoration: none;
         }
 
-        /* Add a media query for screens with a maximum width of 600px */
         @media (max-width: 600px) {
             .navbar a {
                 float: none;
@@ -41,50 +66,53 @@
             }
         }
 
-        /* Style for the photo grid container */
         .photo-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
         }
 
-        /* Style for individual photos */
         .photo {
-            width: calc(33.33% - 20px); /* Adjust based on desired number of columns and gap */
+            width: calc(33.33% - 20px);
             margin: 10px;
             text-align: center;
         }
 
-        /* Add a media query for screens with a minimum width of 1024px */
         @media (min-width: 1024px) {
             .photo {
-                width: calc(25% - 20px); /* Adjust for larger screens and desired columns */
+                width: calc(25% - 20px);
             }
         }
 
-        /* Apply a media query for screens with a maximum width of 768px for the photo grid */
-        @media (max-width: 420px) {
+        @media (max-width: 768px) {
             .photo {
-                width: calc(50% - 20px); /* Adjust for smaller screens and fewer columns */
+                width: calc(50% - 20px);
             }
         }
-        .button {
-            padding: auto;
-            border-radius: 2;
-            color: black;
-            font-family: sans-serif;
+
+        .my-button {
+            background-color: #00ff88;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
+
+        /* Change button color on hover */
+        .my-button:hover {
+            background-color: #00b345;
+        }
+
         .load-more-container {
             text-align: center;
-            margin-top: 20px; /* Adjust the margin as needed */
+            margin-top: 20px;
         }
 
-        /* Style for the hidden checkbox input */
         .load-more-input {
             display: none;
         }
 
-        /* Style for the "Load More" button label */
         .load-more-label {
             display: inline-block;
             padding: 10px 20px;
@@ -94,49 +122,13 @@
             cursor: pointer;
         }
 
-        /* Style for the hidden checkbox input when checked */
         .load-more-input:checked + .photo-grid .photo.hidden {
             display: block;
         }
 
-        /* Style for the "Load More" button label when the checkbox is checked */
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
-            display: none;}
-            .logo {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
+            display: none;
         }
-        .my-button {
-    background-color: #4CAF50; /* Green background color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding around the text */
-    border: none; /* Remove the button border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    font-size: 16px; /* Text size */
-}
-
-/* Style the button on hover */
-.my-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-@media screen and (max-width: 768px) {
-    hr {
-        background-color: #333; /* Change the background color for mobile */
-        height: 2px; /* Adjust the height for mobile */
-        margin: 10px 0; /* Adjust the margin for mobile */
-    }
-}
-
-/* Styles for desktop devices (e.g., PCs) */
-@media screen and (min-width: 769px) {
-    hr {
-        background-color: #adadad; /* Change the background color for desktop */
-        height: 1px; /* Adjust the height for desktop */
-        margin: 20px 0; /* Adjust the margin for desktop */
-    } }
-    /* Style for the back arrow button */
 .back-arrow-button {
     width: 40px;
     height: 40px;
