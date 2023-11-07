@@ -2,65 +2,96 @@
 <html>
 <head>
   <style>
+    /* Common styles for all devices */
     body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-.login-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  width: 300px;
-  margin: 100px auto;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .login-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-h2 {
-  margin: 0;
-  padding-bottom: 10px;
-}
+    h2 {
+      margin: 0;
+      padding-bottom: 10px;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
-label {
-  font-weight: bold;
-}
+    label {
+      font-weight: bold;
+    }
 
-input {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    input {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-.login-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .login-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.login-button:hover {
-  background-color: #0056b3;
-}
+    .login-button:hover {
+      background-color: #0056b3;
+    }
 
-a {
-  text-decoration: none;
-  color: #007bff;
-}
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styles for laptops or standard screens */
+    @media screen and (min-width: 1024px) {
+      .login-container {
+        width: 400px;
+      }
+    }
+
+    /* Styles for tablets in portrait orientation */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .login-container {
+        width: 70%;
+      }
+    }
+
+    /* Styles for mobile devices in portrait orientation */
+    @media screen and (max-width: 767px) {
+      .login-container {
+        width: 90%;
+        margin: 50px auto;
+      }
+
+      input {
+        padding: 10px;
+      }
+
+      .login-button {
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>

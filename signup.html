@@ -2,6 +2,7 @@
 <html>
 <head>
     <style>
+        /* Common styles for all devices */
         body {
             font-family: Arial, sans-serif;
         }
@@ -41,6 +42,27 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        /* Styles for laptops or standard screens */
+        @media screen and (min-width: 1024px) {
+            .container {
+                max-width: 400px;
+            }
+        }
+
+        /* Styles for tablets in portrait orientation */
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .container {
+                max-width: 70%;
+            }
+        }
+
+        /* Styles for mobile devices in portrait orientation */
+        @media screen and (max-width: 767px) {
+            .container {
+                max-width: 90%;
+            }
         }
     </style>
 </head>

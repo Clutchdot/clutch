@@ -3,6 +3,7 @@
 <head>
     <title>Login Page</title>
     <style>
+        /* Common styles for all devices */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -40,6 +41,29 @@
 
         .btn:hover {
             background: #0056b3;
+        }
+
+        /* Styles for laptops or standard screens */
+        @media screen and (min-width: 1024px) {
+            /* Your laptop styles here */
+        }
+
+        /* Styles for tablets in portrait orientation */
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+
+        /* Styles for mobile devices in portrait orientation */
+        @media screen and (max-width: 767px) {
+            .container {
+                max-width: 90%;
+            }
+
+            .btn-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
