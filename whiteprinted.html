@@ -20,6 +20,7 @@
                 background-position: 100% 100%;
             }
         }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -131,6 +132,22 @@
         }
         .photo{
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .photo {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Apply the uplift effect on hover */
+        .photo:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Additional styles for the image */
+        .photo img {
+            max-width: 100%;
+            height: auto;
         }
 .back-arrow-button {
     width: 40px;

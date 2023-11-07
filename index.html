@@ -19,7 +19,23 @@
                 background-position: 100% 100%;
             }
         }
+/* Define the default styles for the photo */
+.photo {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
 
+        /* Apply the uplift effect on hover */
+        .photo:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Additional styles for the image */
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -174,9 +190,12 @@
              <p>Photo 1 Description</p>
          </div>
     </div>
+    
     <div class="load-more-container">
         <input type="checkbox" id="load-more" class="load-more-input">
         <label for="load-more" class="load-more-label">Load More</label>
     </div>
+    
+    
 </body>
 </html>
