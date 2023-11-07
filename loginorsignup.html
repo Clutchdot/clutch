@@ -8,6 +8,8 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
+            margin: 0; /* Remove body margin for consistency */
+            padding: 0; /* Remove body padding for consistency */
         }
 
         .container {
@@ -45,18 +47,13 @@
 
         /* Styles for laptops or standard screens */
         @media screen and (min-width: 1024px) {
-            /* Your laptop styles here */
-        }
-
-        /* Styles for tablets in portrait orientation */
-        @media screen and (min-width: 768px) and (max-width: 1023px) {
             .container {
-                max-width: 80%;
+                max-width: 400px;
             }
         }
 
-        /* Styles for mobile devices in portrait orientation */
-        @media screen and (max-width: 767px) {
+        /* Styles for tablets in portrait orientation and mobile devices in portrait orientation */
+        @media screen and (min-width: 768px) and (max-width: 1023px), screen and (max-width: 767px) {
             .container {
                 max-width: 90%;
             }
