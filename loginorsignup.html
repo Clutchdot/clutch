@@ -46,14 +46,14 @@
         }
 
         /* Styles for laptops or standard screens */
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
             .container {
                 max-width: 400px;
             }
         }
 
-        /* Styles for tablets in portrait orientation and mobile devices in portrait orientation */
-        @media screen and (min-width: 768px) and (max-width: 1023px), screen and (max-width: 767px) {
+        /* Styles for tablets and mobile devices in portrait orientation */
+        @media (max-width: 1023px) {
             .container {
                 max-width: 90%;
             }

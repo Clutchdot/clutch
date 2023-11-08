@@ -1,104 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>User Details Form</title>
-   <style>
-    .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 5px #ccc;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px #ccc;
+        }
 
-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
 
-form input[type="text"],
-form input[type="tel"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+        form input[type="text"],
+        form input[type="tel"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-form button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-top: 15px;
-    cursor: pointer;
-}
+        form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
 
-form button:hover {
-    background-color: #0056b3;
-}
-   </style>
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var userForm = document.getElementById('userForm');
+        form button:hover {
+            background-color: #0056b3;
+        }
 
-    userForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Get form data
-        var name = document.getElementById('name').value;
-        var address = document.getElementById('address').value;
-        var phone = document.getElementById('phone').value;
-        var serialNumber = document.getElementById('serialNumber').value;
-        var shirtSize = document.getElementById('shirtSize').value;
-
-        // Send data to the server using AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/submit', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Data sent successfully
-                alert('User details submitted successfully!');
-                userForm.reset();
+        /* Responsive styles for tablets and mobile devices */
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 10px;
             }
-        };
 
-        xhr.send(JSON.stringify({ name, address, phone, serialNumber, shirtSize }));
-    });
-});
-   </script>
-</head> 
+            form input[type="text"],
+            form input[type="tel"],
+            form textarea,
+            form select {
+                width: 100%;
+                padding: 8px;
+            }
+
+            form button {
+                padding: 8px 16px;
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var userForm = document.getElementById('userForm');
+
+            userForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Get form data
+                var name = document.getElementById('name').value;
+                var address = document.getElementById('address').value;
+                var phone = document.getElementById('phone').value;
+                var serialNumber = document.getElementById('serialNumber').value;
+                var shirtSize = document.getElementById('shirtSize').value;
+
+                // Send data to the server using AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/submit', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Data sent successfully
+                        alert('User details submitted successfully!');
+                        userForm.reset();
+                    }
+                };
+
+                xhr.send(JSON.stringify({ name, address, phone, serialNumber, shirtSize }));
+            });
+        });
+    </script>
+</head>
+
 <body>
     <div class="container">
         <h2>User Details</h2>
         <form id="userForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            
+
             <label for="address">Address:</label>
             <textarea id="address" name="address" required></textarea>
-            
+
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
             <label for="serialNumber">Serial Number of Shirt:</label>
             <input type="text" id="serialNumber" name="serialNumber" required>
-            
+
             <label for="shirtSize">Shirt Size:</label>
             <select id="shirtSize" name="shirtSize" required>
                 <option value="S">S</option>
@@ -114,4 +137,5 @@ form button:hover {
 
     <script src="script.js"></script>
 </body>
+
 </html>
