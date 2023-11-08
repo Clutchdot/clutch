@@ -1,8 +1,7 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,13 +18,6 @@
             100% {
                 background-position: 100% 100%;
             }
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
         }
 
         .logo-and-login {
@@ -130,10 +122,9 @@
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
             display: none;
         }
-        .photo{
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
+
         .photo {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease;
@@ -149,32 +140,33 @@
             max-width: 100%;
             height: auto;
         }
-.back-arrow-button {
-    width: 40px;
-    height: 40px;
-    background: url('back-arrow.png') no-repeat center center;
-    background-size: 60% 60%;
-    border: none;
-    cursor: pointer;
-    color: #000000;
-}
 
+        .back-arrow-button {
+            width: 40px;
+            height: 40px;
+            background: url('back-arrow.png') no-repeat center center;
+            background-size: 60% 60%;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+        }
     </style>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-        // Get the back button element by its ID
-        var backButton = document.getElementById('backButton');
-    
-        // Add a click event listener to the back button
-        backButton.addEventListener('click', function() {
-            // Use the browser's history to navigate back to the previous page
-            window.history.back();
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the back button element by its ID
+            var backButton = document.getElementById('backButton');
+
+            // Add a click event listener to the back button
+            backButton.addEventListener('click', function() {
+                // Use the browser's history to navigate back to the previous page
+                window.history.back();
+            });
         });
-    });
     </script>
 </head>
 
 <body>
-    <img class="logo" src="logo.png" alt="Your Logo" width="100">
+<img class="logo" src="logo.png" alt="Your Logo" width="100">
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="#">About</a>
@@ -187,78 +179,26 @@
 <script src="script.js"></script>
 <div class="photo-grid">
     <div class="photo">
-       <a href="testing.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
-        <p>white Clutch Printed <br> <i><b>599/-</b></i></p>
-       <a href="detail.html"> <button class="my-button">Buy Now</button> </a>
+        <a href="testing.html"><img src="white.jpg" alt="Photo 1" width="100%"></a>
+        <p>white Clutch Printed <br><i><b>599/-</b></i></p>
+        <a href="detail.html"><button class="my-button">Buy Now</button></a>
     </div>
-<hr width="1240" `>
-<p> <b>You must Like </b> </p> <br> <br>
+    <hr width="100%">
+    <p><b>You May also Like</b></p>
+</div>
 <div class="photo-grid">
     <div class="photo">
-       <a href="testing.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
+        <a href="testing.html"><img src="white.jpg" alt="Photo 1" width="100%"></a>
         <p>Photo 1 Description</p>
     </div>
     <div class="photo">
-        <img src="black hoodie.jpg" alt="Photo 2" width="320">
+        <img src="black hoodie.jpg" alt="Photo 2" width="100%">
         <p>Photo 2 Description</p>
     </div>
-    <div class="photo"> 
-        <img src="cream.jpg" alt="Photo 3" width="320">
+    <div class="photo">
+        <img src="cream.jpg" alt="Photo 3" width="100%">
         <p>Photo 3 Description</p>
-        </div>
-        
-    </body>
-    </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+</div>
+</body>
+</html>
