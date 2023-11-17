@@ -106,11 +106,19 @@
             }
         }
 
-        .button {
-            padding: auto;
-            border-radius: 2;
-            color: black;
-            font-family: sans-serif;
+        .my-button {
+           align-items: center;
+            background-color: rgb(1, 15, 9);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Change button color on hover */
+        .my-button:hover {
+            background-color: #202522;
         }
 
         .load-more-container {
@@ -148,8 +156,8 @@
         </div>
     </div>
     <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
         <a href="#">Services</a>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
@@ -191,10 +199,7 @@
          </div>
     </div>
     
-    <div class="load-more-container">
-        <input type="checkbox" id="load-more" class="load-more-input">
-        <label for="load-more" class="load-more-label">Load More</label>
-    </div>
+    <a href="store.html"><button class="my-button" >Show More</button></a>
     
     
 </body>
