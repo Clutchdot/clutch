@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('logo.png') repeat;
+            animation: backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+/* Define the default styles for the photo */
+.photo {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Apply the uplift effect on hover */
+        .photo:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Additional styles for the image */
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .logo-and-login {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .login-button a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .photo {
+            width: calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .photo {
+                width: calc(25% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photo {
+                width: calc(50% - 20px);
+            }
+        }
+
+        .button {
+            padding: auto;
+            border-radius: 2;
+            color: black;
+            font-family: sans-serif;
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .load-more-input {
+            display: none;
+        }
+
+        .load-more-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .load-more-input:checked + .photo-grid .photo.hidden {
+            display: block;
+        }
+
+        .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-and-login">
+        <img class="logo" src="logo.png" alt="Your Logo">
+        <div class="login-button">
+            <a href="loginorsignup.html">Login</a>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="whitets.html"><i>[ White</i></a>
+        <a href="blackts.html">/<i style="color: green;"> Black </i>/</a> 
+        <a href="peachts.html" ><i> Peach </i><i>]</i></a> 
+        <a href="aboutus.html">About Us</a>
+        <a href="#">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="photo-grid">
+        <div class="photo">
+            <a href="whiteprinted.html"> <img src="black.png" alt="Photo 1" width="320"></a>
+             <p>Clutch Printed Black <br>599/-</p>
+         </div>
+            <div class="photo">
+                <a href="whiteprinted.html"> <img src="cutesimiling shirt.jpg" alt="Photo 1" width="320"></a>
+                 <p>Cute Siling Shirt <br>499/-</p>
+             </div>
+             <div class="photo">
+                <a href="whiteprinted.html"> <img src="cutesimling hoodie.jpg" alt="Photo 1" width="320"></a>
+                 <p>Cute Simle <br> 549/-</p>
+                </div>
+            <div class="photo">
+                <a href="whiteprinted.html"> <img src="dogface.jpg" alt="Photo 1" width="320"></a>
+                  <p>Dog Face Shirt <br> 499/-</p>
+                </div>    
+                <div class="photo">
+                    <a href="whiteprinted.html"> <img src="foreveralone black.jpg" alt="Photo 1" width="320"></a>
+                     <p>foreveralone Printed <br> 499/-</p>
+                 </div>
+                 <div class="photo">
+                    <a href="whiteprinted.html"> <img src="dogface hoodie.jpg" alt="Photo 1" width="320"></a>
+                     <p>Dog Face Printed hoodie  <br> 549/-</p>
+                 </div>
+                 <div class="photo">
+                    <a href="whiteprinted.html"> <img src="foreveralone hoodie.jpg" alt="Photo 1" width="320"></a>
+                     <p>foreveralone Printed Hoodie <br> 549/-</p>
+                 </div>
+    </div>
+    
+   
