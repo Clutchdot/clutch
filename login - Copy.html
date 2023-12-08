@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head> <title>login</title>
+  <style>
+    .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.2s ease 0.2s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('logo.png') repeat;
+            animation: backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    /* Common styles for all devices */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styles for laptops or standard screens */
+    @media screen and (min-width: 1024px) {
+      .login-container {
+        width: 400px;
+      }
+    }
+
+    /* Styles for tablets in portrait orientation */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .login-container {
+        width: 70%;
+      }
+    }
+
+    /* Styles for mobile devices in portrait orientation */
+    @media screen and (max-width: 767px) {
+      .login-container {
+        width: 90%;
+        margin: 50px auto;
+      }
+
+      input {
+        padding: 10px;
+      }
+
+      .login-button {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-overlay"></div>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      
+      <label for "password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+</body>
+</html>
