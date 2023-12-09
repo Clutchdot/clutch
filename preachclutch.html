@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head> <title>black</title>
+<head> <title>whiteprinted</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .loading-overlay {
@@ -27,7 +27,7 @@
     }
 }
 
-          body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -42,29 +42,6 @@
             100% {
                 background-position: 100% 100%;
             }
-        }
-/* Define the default styles for the photo */
-.photo {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        /* Apply the uplift effect on hover */
-        .photo:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Additional styles for the image */
-        .photo img {
-            max-width: 100%;
-            height: auto;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
         }
 
         .logo-and-login {
@@ -130,11 +107,18 @@
             }
         }
 
-        .button {
-            padding: auto;
-            border-radius: 2;
-            color: black;
-            font-family: sans-serif;
+        .my-button {
+            background-color: #00ff88;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Change button color on hover */
+        .my-button:hover {
+            background-color: #00b345;
         }
 
         .load-more-container {
@@ -162,55 +146,84 @@
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
             display: none;
         }
+
+        .photo {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Apply the uplift effect on hover */
+        .photo:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Additional styles for the image */
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .back-arrow-button {
+            width: 40px;
+            height: 40px;
+            background: url('back-arrow.png') no-repeat center center;
+            background-size: 60% 60%;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the back button element by its ID
+            var backButton = document.getElementById('backButton');
+
+            // Add a click event listener to the back button
+            backButton.addEventListener('click', function() {
+                // Use the browser's history to navigate back to the previous page
+                window.history.back();
+            });
+        });
+    </script>
 </head>
+
 <body>
-    <div class="logo-and-login">
-        <img class="logo" src="logo.png" alt="Your Logo">
-        <div class="login-button">
-            <a href="loginorsignup.html">Login</a>
-        </div>
+<img class="logo" src="logo.png" alt="Your Logo" width="100">
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="#">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+</div>  <div class="loading-overlay"></div>
+<button id="backButton" class="back-arrow-button">&#8592</button>
+
+<script src="script.js"></script>
+<div class="photo-grid">
+    <div class="photo">
+        <a href="detail.html"><img src="cream.jpg" alt="Photo 1" width="100%"></a>
+        <p>peach clutch printed  <br><i><b>599/-</b></i></p>
+        <a href="detail.html"><button class="my-button">Buy Now</button></a>
     </div>
-    <div class="loading-overlay"></div>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
-        <a href="whitets.html"><i>[ White</i></a>
-        <a href="blackts.html">/<i style="color: green;"> Black </i>/</a> 
-        <a href="peachts.html" ><i> Peach </i><i>]</i></a> 
-        <a href="aboutus.html">About Us</a>
-        <a href="#">Portfolio</a>
-        <a href="contact.html">Contact</a>
+    <hr width="100%">
+    <p><b>You May also Like</b></p>
+</div>
+<div class="photo-grid">
+    <div class="photo">
+        <a href="testing.html"><img src="white.jpg" alt="Photo 1" width="100%"></a>
+        <p>Photo 1 Description</p>
     </div>
-    <div class="photo-grid">
-        <div class="photo">
-            <a href="whiteprinted.html"> <img src="black.png" alt="Photo 1" width="320"></a>
-             <p>Clutch Printed Black <br>599/-</p>
-         </div>
-            <div class="photo">
-                <a href="whiteprinted.html"> <img src="cutesimiling shirt.jpg" alt="Photo 1" width="320"></a>
-                 <p>Cute Siling Shirt <br>499/-</p>
-             </div>
-             <div class="photo">
-                <a href="whiteprinted.html"> <img src="cutesimling hoodie.jpg" alt="Photo 1" width="320"></a>
-                 <p>Cute Simle <br> 549/-</p>
-                </div>
-            <div class="photo">
-                <a href="whiteprinted.html"> <img src="dogface.jpg" alt="Photo 1" width="320"></a>
-                  <p>Dog Face Shirt <br> 499/-</p>
-                </div>    
-                <div class="photo">
-                    <a href="whiteprinted.html"> <img src="foreveralone black.jpg" alt="Photo 1" width="320"></a>
-                     <p>foreveralone Printed <br> 499/-</p>
-                 </div>
-                 <div class="photo">
-                    <a href="whiteprinted.html"> <img src="dogface hoodie.jpg" alt="Photo 1" width="320"></a>
-                     <p>Dog Face Printed hoodie  <br> 549/-</p>
-                 </div>
-                 <div class="photo">
-                    <a href="whiteprinted.html"> <img src="foreveralone hoodie.jpg" alt="Photo 1" width="320"></a>
-                     <p>foreveralone Printed Hoodie <br> 549/-</p>
-                 </div>
+    <div class="photo">
+        <img src="black hoodie.jpg" alt="Photo 2" width="100%">
+        <p>Photo 2 Description</p>
     </div>
-    
-   
+    <div class="photo">
+        <img src="cream.jpg" alt="Photo 3" width="100%">
+        <p>Photo 3 Description</p>
+    </div>
+</div>
+</body>
+</html>
