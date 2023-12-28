@@ -1,160 +1,165 @@
 <!DOCTYPE html>
-<html>
-
-<head> <title>login</title>
-  <style>
-    .loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 0.2s ease 0.2s forwards;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page | untoldcoding</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppons", sans-serif;
 }
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  background: linear-gradient(#06491b 0%, #097936 35%, #00ff40 100%);
 }
+.box {
+  position: relative;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+.box .card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  width: 300px;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-top: 1px solid rgb(255, 255, 255, 0.75);
+  border-left: 1px solid rgb(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgb(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+}
+.elements {
+  position: absolute;
+  top: 50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 255, 255, 0.1);
+  transform: translateZ(80px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-top: 1px solid rgb(255, 255, 255, 0.75);
+  border-left: 1px solid rgb(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgb(0, 0, 0, 0.5);
+}
+.elements.name {
+  top: 90px;
+  left: initial;
+  right: 50px;
+  width: 100px;
+  padding: 10px;
 
-    body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('logo.png') repeat;
-            animation: backgroundAnimation 20s linear infinite;
-        }
+  text-align: center;
+  transform: translateZ(100px);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+  color: white;
+}
+.elements.untoldcoding::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(Untold\ Coding.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.elements.content {
+  top: initial;
+  left: initial;
+  bottom: 30px;
+  right: 55px;
+  width: 60%;
+  min-height: 200px;
+  padding: 10px;
+  transform: translateZ(180px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  background: transparent;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+  font-size: 0.9em;
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-top: 1px solid rgb(255, 255, 255, 0.75);
+  border-left: 1px solid rgb(255, 255, 255, 0.75);
+  border-radius: 10px;
+  width: 100%;
+}
+button {
+  margin-top: 10px;
+  width: 40%;
+  background-color: transparent;
+  color: white;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-top: 1px solid rgb(255, 255, 255, 0.75);
+  border-left: 1px solid rgb(255, 255, 255, 0.75);
+  border-radius: 10px;
+  width: 100%;
+}
+button:hover {
+  background-color: #090979;
+}
+::placeholder {
+  color: rgb(181, 177, 177);
+  font-size: 10px;
+  padding-left: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="elements untoldcoding"></div>
+      <div class="elements name">
+        <h2>Login Page</h2>
+      </div>
+      <div class="elements content">
+        <form action="">
+          <input type="text" placeholder="email" />
+          <input type="password" placeholder="password" />
+          <button>Login</button>
+        </form>
+      </div>
+      <div class="card"></div>
+    </div>
 
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-    /* Common styles for all devices */
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    .login-container {
-      background-color: #ffffff;
-      border-radius: 10px;
-      width: 300px;
-      margin: 100px auto;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      margin: 0;
-      padding-bottom: 10px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    input {
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .login-button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .login-button:hover {
-      background-color: #0056b3;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007bff;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Styles for laptops or standard screens */
-    @media screen and (min-width: 1024px) {
-      .login-container {
-        width: 400px;
-      }
-    }
-
-    /* Styles for tablets in portrait orientation */
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-      .login-container {
-        width: 70%;
-      }
-    }
-
-    /* Styles for mobile devices in portrait orientation */
-    @media screen and (max-width: 767px) {
-      .login-container {
-        width: 90%;
-        margin: 50px auto;
-      }
-
-      input {
-        padding: 10px;
-      }
-
-      .login-button {
-        padding: 12px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="loading-overlay"></div>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username" required>
-      
-      <label for "password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      
-      <button type="submit" class="login-button">Login</button>
-    </form>
-    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-  </div>
-  <button onclick="goBack()">Back to Home</button>
-  <script> 
-  function goBack() {
-  window.location.href = "index.html"; // Replace "home.html" with the actual URL of your home page
-}</script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/
+vanilla-tilt.min.js"
+      integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz
+2DeQkEmums41laI+eGMw95IJ15SS3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      VanillaTilt.init(document.querySelector(".box"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+      });
+    </script>
+  </body>
 </html>
