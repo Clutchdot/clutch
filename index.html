@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head> <title>home</title>
+<head>
+    <title>home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        .loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 0.2s ease 0.2s forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-          body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('logo.png') repeat;
-            animation: backgroundAnimation 20s linear infinite;
+      ng-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 0.2s ease 0.2s forwards;
         }
 
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: 0 0;
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
             }
-            100% {
-                background-position: 100% 100%;
+            to {
+                opacity: 0;
+                visibility: hidden;
             }
         }
-/* Define the default styles for the photo */
-.photo {
+
+        .navbar {
+            overflow: hidden;
+            background-color: #ce2828; /* Your desired background color */
+        }
+
+        /* Define the default styles for the photo */
+        .photo {
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease;
@@ -59,12 +49,6 @@
         .photo img {
             max-width: 100%;
             height: auto;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
         }
 
         .logo-and-login {
@@ -86,7 +70,7 @@
 
         .navbar {
             overflow: hidden;
-            background-color: #333;
+            background-color: rgb(1, 15, 9); /* RGB background color */
         }
 
         .navbar a {
@@ -131,7 +115,7 @@
         }
 
         .my-button {
-           align-items: center;
+            align-items: center;
             background-color: rgb(1, 15, 9);
             color: white;
             padding: 10px 20px;
@@ -170,21 +154,93 @@
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
             display: none;
         }
+        .photo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .photo {
+            position: relative;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .photo img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo .swap-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo:hover img {
+            opacity: 0;
+        }
+
+        .photo:hover .swap-img {
+            opacity: 1;
+        }
+
+        @media (min-width: 1024px) {
+            .photo {
+                width: calc(25% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photo {
+                width: calc(50% - 20px);
+            }
+        }
+
+        .my-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .my-button {
+            background-color: rgb(1, 15, 9);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .my-button:hover {
+            background-color: #202522;
+        }
+        .photo-container {
+            max-width: 100%; /* Change this line to make the container full width */
+        }
+
     </style>
 </head>
 <body>
     <div class="logo-and-login">
         <img class="logo" src="logo.png" alt="Your Logo">
-        <div class="login-button">
-            <a href="loginorsignup.html">Login</a>
-        </div>
     </div>
-    
-        <div class="loading-overlay"></div>
-        <!-- Your existing content here -->
-        <!-- ... -->
-    
-    
+
+    <div class="loading-overlay"></div>
+    <!-- Your existing content here -->
+    <!-- ... -->
+
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="store.html">Store</a>
@@ -192,23 +248,51 @@
         <a href="#">Services</a>
         <a href="contact.html">Contact</a>
     </div>
-    <div class="photo-grid">
-        <div class="photo">
-            <a href="whitets.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
-             <p>Click For White T-Shirts <br> starting from 499/-</p>
+    <div class="photo-container" style="background-color: #C0C0C0;">
+        <div class="photo-grid">
+            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
+                <a href="whitets.html">
+                    <img src="white.jpg" alt="Photo 1" width="320">
+                    <img class="swap-img" src="dogface white.jpg" alt="Swap Image 1" width="320">
+                </a>
+                <p>Click For White T-Shirts <br> starting from 499/-</p>
+            </div> </div>
+            <div class="photo-container" style="background-color: #A9A9A9	;">
+                <div class="photo-grid">
+            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
+                <a href="blackts.html">
+                    <img src="black.png" alt="Photo 1" width="320">
+                    <img class="swap-img" src="black hoodie.jpg" alt="Swap Image 2" width="320">
+                </a>
+                <p>Click For Black T-Shirts <br>starting from 499/- only</p>
+            </div></div>
+            <div class="photo-container" style="background-color: #C0C0C0;">
+                <div class="photo-grid">
+            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
+                <a href="peachts.html">
+                    <img src="cream.jpg" alt="Photo 1" width="320">
+                    <img class="swap-img" src="foreveralone black.jpg" alt="Swap Image 3" width="320">
+                </a>
+                <p>Click For Peach T-Shirts  <br> starting from 499/- only</p>
+            </div></div>
+            <!-- Add more photos as needed -->
         </div>
-        <div class="photo">
-            <a href="blackts.html"> <img src="black.png" alt="Photo 1" width="320"></a>
-             <p>Click For Black T-Shirts <br>starting from 499/- only</p>
-         </div>
-         <div class="photo">
-            <a href="peachts.html"> <img src="cream.jpg" alt="Photo 1" width="320"></a>
-             <p>Click For Peach T-Shirts  <br> starting from 499/- only</p>
-         </div>
     </div>
-    
+    <div class="photo-container">
+        <br>
+    </div>
+
     <a href="store.html"><button class="my-button" >Show More</button></a>
-    
-    
+    <script>
+        function swapImage(element) {
+            element.querySelector('img').style.opacity = 0;
+            element.querySelector('.swap-img').style.opacity = 1;
+        }
+
+        function resetImage(element) {
+            element.querySelector('img').style.opacity = 1;
+            element.querySelector('.swap-img').style.opacity = 0;
+        }
+    </script>
 </body>
 </html>
