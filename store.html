@@ -3,6 +3,12 @@
 <head> <title>store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #585858; /* Set your desired background color */
+        }
         .loading-overlay {
     position: fixed;
     top: 0;
@@ -18,7 +24,7 @@
 }
 
 @keyframes fadeOut {
-    from {
+    from {  
         opacity: 1;
     }
     to {
@@ -31,7 +37,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('logo.png') repeat;
+            background: url('') repeat;
             animation: backgroundAnimation 20s linear infinite;
         }
 
@@ -162,6 +168,30 @@
         .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
             display: none;
         }
+        .photo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* Adjust the width and margin for different screen sizes if needed */
+        .photo-set {
+            width: calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .photo-set {
+                width: calc(33.33% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photo-set {
+                width: calc(50% - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -182,24 +212,29 @@
         <a href="#">Portfolio</a>
         <a href="contact.html">Contact</a>
     </div>
-    <div class="photo-grid">
-        <div class="photo">
+    <div class="photo-container" style="background-color:#C0C0C0;">
+        <div class="photo-set">
             <a href="whiteprinted.html"> <img src="white.jpg" alt="Photo 1" width="320"></a>
              <p>White clutch Printed <br> 599/-</p>
          </div>
-         <div class="photo">
+         <div class="photo-set">
             <a href="foreveralonewhitebuy.html"> <img src="foreveralone.jpg" alt="Photo 1" width="320"></a>
              <p>foreveralone <br> 499/-</p>
          </div>
         
-         <div class="photo">
+         <div class="photo-set">
             <a href="dogfacewhitebuy.html"> <img src="dogface white.jpg" alt="Photo 1" width="320"></a>
              <p>Dog Face Printed <br> 499/-</p>
          </div>
-         <div class="photo">
+         <div class="photo-set">
             <a href="cutesmilewhitebuy.html"> <img src="cutesmile white.jpg" alt="Photo 1" width="320"></a>
              <p>Cute Simling Printed <br> 499/-</p>
          </div>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div class="photo-container" style="background-color:#B8B8B8;">
          <div class="photo">
             <a href="blackclutchshirtbuy.html"> <img src="black.png" alt="Photo 1" width="320"></a>
              <p>Clutch Printed Black <br>599/-</p>
@@ -215,7 +250,12 @@
             <div class="photo">
                 <a href="dogfacebuy.html"> <img src="dogface.jpg" alt="Photo 1" width="320"></a>
                   <p>Dog Face Shirt <br> 499/-</p>
-                </div>    
+                </div>  
+    </div>
+    <div>
+        <br>
+    </div>
+    <div class="photo-container" style="background-color: #C0C0C0;">  
                 <div class="photo">
                     <a href="forveraloneblackbuy.html"> <img src="foreveralone black.jpg" alt="Photo 1" width="320"></a>
                      <p>foreveralone Printed <br> 499/-</p>
@@ -233,5 +273,7 @@
                      <p>Clutch Printed Peach T-Shirt <br>599/-</p>
                  </div>
     </div>
+</body>
+</html>
     
    
