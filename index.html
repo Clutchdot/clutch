@@ -58,6 +58,18 @@
             background-color: #ffffff;
             padding: 10px;
         }
+        .login-link {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue color, you can change it */
+    color: #fff; /* Text color, you can change it */
+    text-decoration: none; /* Remove default underline on the link */
+    border-radius: 5px;
+    display: inline-block; /* Make it a block-level element for padding */
+}
+
+.login-link:hover {
+    background-color: #0056b3; /* Darker blue color on hover, you can change it */
+}
 
         .logo {
             width: 100px;
@@ -235,6 +247,7 @@
 <body>
     <div class="logo-and-login">
         <img class="logo" src="logo.png" alt="Your Logo">
+        <a href="loginorsignup.html" class="login-link">Login</a>
     </div>
 
     <div class="loading-overlay"></div>
