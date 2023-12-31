@@ -1,311 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      ng-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: fadeOut 0.2s ease 0.2s forwards;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu | helpme_coder</title>
+  <style>
+    /* Reset some default styles */
+    html {
+      box-sizing: border-box;
+    }
 
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
 
-        .navbar {
-            overflow: hidden;
-            background-color: #ce2828; /* Your desired background color */
-        }
+    body {
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background: #635d5d;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Define the default styles for the photo */
-        .photo {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+      width: 500px;
+      margin: 50px auto 20px;
+    }
 
-        /* Apply the uplift effect on hover */
-        .photo:hover {
-            transform: translateY(-10px);
-        }
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      color: #fff;
+      padding: 10px;
+    }
 
-        /* Additional styles for the image */
-        .photo img {
-            max-width: 100%;
-            height: auto;
-        }
+    .logo {
+      width: 100px; /* Adjust the logo width */
+      height: auto;
+      display: block;
+      margin-right: auto; /* Move logo to the left */
+    }
 
-        .logo-and-login {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 10px;
-        }
-        .login-link {
-    padding: 10px 15px;
-    background-color: #007bff; /* Blue color, you can change it */
-    color: #fff; /* Text color, you can change it */
-    text-decoration: none; /* Remove default underline on the link */
-    border-radius: 5px;
-    display: inline-block; /* Make it a block-level element for padding */
-}
+    .login-button {
+      background: #5abf57;
+      color: #333;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.login-link:hover {
-    background-color: #0056b3; /* Darker blue color on hover, you can change it */
-}
+    /* Navigation Styles */
+    .nav {
+      background: #333;
+      width: 100%;
+      color: #f0f0f0;
+      border-radius: 15px;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .logo {
-            width: 100px;
-        }
+    .nav__menu {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .login-button a {
-            color: #000;
-            text-decoration: none;
-        }
+    .nav__menu-item {
+      margin: 0;
+      padding: 10px;
+      position: relative;
+      flex: 1;
+    }
 
-        .navbar {
-            overflow: hidden;
-            background-color: rgb(1, 15, 9); /* RGB background color */
-        }
+    .nav__submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #333;
+      border-top: 2px solid #fff;
+      border-radius: 10px;
+      width: 100%;
+    }
 
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+    .nav__menu-item a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
 
-        @media (max-width: 600px) {
-            .navbar a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-        }
+    .nav__submenu-item {
+      padding: 7px;
+    }
 
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+    .nav__menu-item:hover > a {
+      border: 2px solid #fff;
+      padding: 3px;
+      border-radius: 5px;
+    }
 
-        .photo {
-            width: calc(33.33% - 20px);
-            margin: 10px;
-            text-align: center;
-        }
+    .nav__menu-item:hover .nav__submenu {
+      display: block;
+    }
 
-        @media (min-width: 1024px) {
-            .photo {
-                width: calc(25% - 20px);
-            }
-        }
+    .nav__submenu-item a {
+      color: #fff;
+    }
 
-        @media (max-width: 768px) {
-            .photo {
-                width: calc(50% - 20px);
-            }
-        }
+    .nav__submenu-item:hover > a {
+      border: 2px solid transparent;
+      padding: 1.5px;
+      border-radius: 5px;
+    }
 
-        .my-button {
-            align-items: center;
-            background-color: rgb(1, 15, 9);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .nav__menu-item a, .nav__submenu-item a {
+      transition: border-color 1s ease-in;
+    }
 
-        /* Change button color on hover */
-        .my-button:hover {
-            background-color: #202522;
-        }
+    @media (max-width: 768px) {
+      .nav__menu-item {
+        flex: 100%;
+      }
+    }
 
-        .load-more-container {
-            text-align: center;
-            margin-top: 20px;
-        }
+    /* Photo Grid Styles */
+    .photo-grid {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px;
+    }
 
-        .load-more-input {
-            display: none;
-        }
+    .photo-container {
+      text-align: center;
+    }
 
-        .load-more-label {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #000000;
-            color: white;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .load-more-input:checked + .photo-grid .photo.hidden {
-            display: block;
-        }
-
-        .load-more-input:checked + .photo-grid + .load-more-container .load-more-label {
-            display: none;
-        }
-        .photo-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .photo {
-            position: relative;
-            width: calc(33.33% - 20px);
-            margin: 10px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .photo img {
-            max-width: 100%;
-            height: auto;
-            transition: opacity 0.3s ease;
-        }
-
-        .photo .swap-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            max-width: 100%;
-            height: auto;
-            transition: opacity 0.3s ease;
-        }
-
-        .photo:hover img {
-            opacity: 0;
-        }
-
-        .photo:hover .swap-img {
-            opacity: 1;
-        }
-
-        @media (min-width: 1024px) {
-            .photo {
-                width: calc(25% - 20px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .photo {
-                width: calc(50% - 20px);
-            }
-        }
-
-        .my-button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .my-button {
-            background-color: rgb(1, 15, 9);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .my-button:hover {
-            background-color: #202522;
-        }
-        .photo-container {
-            max-width: 100%; /* Change this line to make the container full width */
-        }
-
-    </style>
+    .photo-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="logo-and-login">
-        <img class="logo" src="logo.png" alt="Your Logo">
-        <a href="loginorsignup.html" class="login-link">Login</a>
-    </div>
+  <div class="header">
+    <img src="logo.png" alt="Logo" class="logo">
+    <a href="loginorsignup.html"><button class="login-button">Login</button></a>
+  </div>
+  
+  <nav class="nav">
+    <ul class="nav__menu">
+      <li class="nav__menu-item"><a href="index.html">Home</a></li>
+      <li class="nav__menu-item"><a href="store.html">Store</a>
+        <ul class="nav__submenu">
+          <ul class="nav__submenu-item"><a href="whitets.html">White </a></ul>
+          <ul class="nav__submenu-item"><a href="blackts.html">Black</a></ul>
+          <ul class="nav__submenu-item"><a href="peachts.html">Peach</a></ul>
+        </ul>
+      </li>
+      <li class="nav__menu-item"><a href="aboutus.html">About</a>
+        <ul class="nav__submenu">
+          <li class="nav__submenu-item"><a>Our Company</a></li>
+          <li class="nav__submenu-item"><a>Our Team</a></li>
+          <li class="nav__submenu-item"><a>Our Reach</a></li>
+        </ul>
+      </li>
+      <li class="nav__menu-item"><a>Blog</a></li>
+      <li class="nav__menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="loading-overlay"></div>
-    <!-- Your existing content here -->
-    <!-- ... -->
-
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="#">Services</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="photo-container" style="background-color: #C0C0C0;">
-        <div class="photo-grid">
-            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
-                <a href="whitets.html">
-                    <img src="white.jpg" alt="Photo 1" width="320">
-                    <img class="swap-img" src="dogface white.jpg" alt="Swap Image 1" width="320">
-                </a>
-                <p>Click For White T-Shirts <br> starting from 499/-</p>
-            </div> </div>
-            <div class="photo-container" style="background-color: #A9A9A9	;">
-                <div class="photo-grid">
-            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
-                <a href="blackts.html">
-                    <img src="black.png" alt="Photo 1" width="320">
-                    <img class="swap-img" src="black hoodie.jpg" alt="Swap Image 2" width="320">
-                </a>
-                <p>Click For Black T-Shirts <br>starting from 499/- only</p>
-            </div></div>
-            <div class="photo-container" style="background-color: #C0C0C0;">
-                <div class="photo-grid">
-            <div class="photo" onmouseover="swapImage(this)" onmouseout="resetImage(this)">
-                <a href="peachts.html">
-                    <img src="cream.jpg" alt="Photo 1" width="320">
-                    <img class="swap-img" src="foreveralone black.jpg" alt="Swap Image 3" width="320">
-                </a>
-                <p>Click For Peach T-Shirts  <br> starting from 499/- only</p>
-            </div></div>
-            <!-- Add more photos as needed -->
-        </div>
+  <!-- Photo Grid Section -->
+  <section class="photo-grid">
+    <div class="photo-container">
+      <a href="whitets.html"><img src="white.jpg" alt="Photo 1" width="320"></a>
+     
     </div>
     <div class="photo-container">
-        <br>
+      <a href="blackts.html"><img src="black hoodie.jpg" alt="Photo 2" width="320"></a>
+     
     </div>
+    <div class="photo-container">
+      <a href="peachts.html"><img src="cream.jpg" alt="Photo 3" width="320"></a>
+     
+    </div>
+  </section>
 
-    <a href="store.html"><button class="my-button" >Show More</button></a>
-    <script>
-        function swapImage(element) {
-            element.querySelector('img').style.opacity = 0;
-            element.querySelector('.swap-img').style.opacity = 1;
-        }
-
-        function resetImage(element) {
-            element.querySelector('img').style.opacity = 1;
-            element.querySelector('.swap-img').style.opacity = 0;
-        }
-    </script>
+  <!-- Your existing body content -->
 </body>
 </html>
